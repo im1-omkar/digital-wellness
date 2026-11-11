@@ -1,0 +1,8 @@
+{
+  "name": "@wellness/content",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/catalog.ts" },
+  "dependencies": { "@wellness/contracts": "1.0.0" }
+}

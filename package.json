@@ -1,0 +1,21 @@
+{
+  "name": "digital-wellness-resource-hub",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "engines": { "node": ">=20.9" },
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w @wellness/api\" \"npm run dev -w @wellness/web\"",
+    "dev:api": "npm run dev -w @wellness/api",
+    "dev:web": "npm run dev -w @wellness/web",
+    "build": "npm run build -w @wellness/api && npm run build -w @wellness/web",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down",
+    "db:generate": "npm run db:generate -w @wellness/api",
+    "db:migrate": "npm run db:migrate -w @wellness/api",
+    "db:seed": "npm run db:seed -w @wellness/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

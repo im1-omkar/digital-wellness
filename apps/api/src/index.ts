@@ -4,7 +4,7 @@ import { pool } from "./db/client.js";
 import { purgeExpiredFeedback } from "./db/retention.js";
 
 const port = Number(process.env.PORT || 4000);
-const server = app.listen(port, () => {
+const server = app.listen(port, "0.0.0.0", () => {
   console.info(`Digital Wellness API listening on port ${port}.`);
 });
 
